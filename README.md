@@ -6,11 +6,17 @@
 ```fish
 git clone https://github.com/quantumvoid0/hangman
 cd hangman
-gcc main.c -o hangman
+./setup install
 clear
 ./hangman
 ```
-- to play again , just `cd` to the hangman installed folder and run the `hangman` binary 
+- to play again , just run `hangman` in ur terminal
 
 ## Uninstall
-- just delete the cloned folder
+
+```fish
+git clone https://github.com/quantumvoid0/hangman
+cd hangman
+./setup uninstall
+```
+
