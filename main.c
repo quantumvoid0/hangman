@@ -80,11 +80,13 @@ int main() {
         } else {
             printf("letter '%c' from your guess is wrong\n", c);
             char cmd[256];
-            sprintf(cmd, "cat stick/%d", j);
+            snprintf(cmd, sizeof(cmd), "cat %s/.local/bin/stick/%d", getenv("HOME"), j);
             system(cmd);
             j++;
             if (j > 7) {
-                system("cat stick/7");
+                char path[256];
+                snprintf(path, sizeof(path), "cat %s/.local/bin/stick/7", getenv("HOME"));
+                system(path);
                 printf("you lost! the word was: %s\n", words[random_index]);
                 return 1;
             }
